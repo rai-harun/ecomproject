@@ -10,14 +10,13 @@ class Customer(models.Model):
     def __str__(self):
         return self.full_name
 
-
 class Category(models.Model):
     title = models.CharField(max_length=100)
     slug = models.SlugField(unique=True)
 
     def __str__(self):
         return self.title
-
+        
 class Product(models.Model):
     title = models.CharField(max_length=200)
     slug = models.SlugField(unique=True)
@@ -44,6 +43,7 @@ class Cart(models.Model):
 class CartProduct(models.Model):
     cart = models.ForeignKey(Cart, on_delete=models.CASCADE)
     product = models.ForeignKey(Product, on_delete=models.CASCADE)
+    rate = models.PositiveIntegerField()
     quantity = models.PositiveIntegerField()
     subtotal = models.PositiveIntegerField()
      

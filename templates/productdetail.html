@@ -17,7 +17,7 @@
                 <p> {{product.category}}</p>
                 <b><p>Price:</p></b>
                 <p><strike>Rs.{{product.marked_price}}</strike> Rs.{{product.selling_price}}</p>
-                <a href="#" class="btn btn-primary my-2">Add to cart</a>
+                <a href="{% url 'ecomapp:addtocart' product.id %}" class="btn btn-primary my-2">Add to cart</a>
                 <hr>
                 <p class="text-info"> Warranty: {{product.warranty}}</p>
                 <p  class="text-info">Return Policy: {{product.return_policy}}</p>
